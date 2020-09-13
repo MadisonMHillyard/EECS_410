@@ -1,0 +1,23 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimaryDark">#31154E49</item>
+        <item name="colorPrimary">#004D40</item>
+        <item name="colorAccent">#B0CAC7</item>
+        <item name="android:textColor">#B0CAC7</item>
+        <item name="android:windowBackground">#1B2B25</item>
+        <item name="android:colorBackground">#000000</item>
+        <item name="android:textSize">20sp</item>
+
+    </style>
+    <style name="fab_3_rounded">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+<!--        <item name="cornerSizeBottomLeft">0dp</item>-->
+    </style>
+<!--    <style name="TextStyle" parent="@android:style/TextAppearance">-->
+<!--        <item name="android:textSize">20sp</item>-->
+<!--        <item name="android:textColor">#B0CAC7</item>-->
+<!--    </style>-->
+</resources>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Assignment1</string>
+    <string name="export_csv_data">Export CSV Data</string>
+    <string name="extended_fab_label">Add Sensors</string>
+    <string name="extended_fab_content_desc">sensor_list</string>
+    <string name="chart_title">Real Time Sensor Chart</string>
+    <string name="chart_title_description">Sensor Chart Title</string>
+</resources>
