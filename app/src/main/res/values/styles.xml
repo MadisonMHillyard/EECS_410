@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimaryDark">#31154E49</item>
+        <item name="colorPrimaryDark">#FFFFFF</item>
         <item name="colorPrimary">#004D40</item>
         <item name="colorAccent">#B0CAC7</item>
         <item name="android:textColor">#B0CAC7</item>
