@@ -7,133 +7,154 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/chartTitle"
+        style="@style/AppTheme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_weight="1.5"
+        android:contentDescription="@string/chart_title_description"
+        android:ems="16"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:labelFor="@+id/chartTitle"
+        android:text="@string/chart_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/chart"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center|end"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:paddingLeft="16dp"
-        android:paddingTop="16dp"
-        android:paddingRight="16dp"
-        android:paddingBottom="16dp"
-        tools:layout_editor_absoluteY="381dp">
+        android:layout_height="0dp"
+        android:layout_gravity="center|top"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_weight="10"
+        android:background="#000"
+        android:contentDescription="@string/chart_description"
+        android:labelFor="@+id/chart"
+        android:text="@string/chart"
+        app:layout_constraintBottom_toTopOf="@+id/toggleData"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chartTitle">
 
-        <EditText
-            android:id="@+id/chartTitle"
-            style="@style/AppTheme"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:layout_gravity="top|start"
-            android:layout_weight="1.5"
-            android:contentDescription="@string/chart_title_description"
-            android:ems="16"
-            android:importantForAutofill="no"
-            android:inputType="textPersonName"
-            android:labelFor="@+id/chartTitle"
-            android:text="@string/chart_title" />
+    </com.github.mikephil.charting.charts.LineChart>
 
-        <com.github.mikephil.charting.charts.LineChart
-            android:id="@+id/chart"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_gravity="top|start"
-            android:layout_weight="10"
-            android:background="#000"
-            android:contentDescription="@string/chart_description"
-            android:labelFor="@+id/chart"
-            android:text="@string/chart">
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/toggleData"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_horizontal|center_vertical"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_weight="1"
+        android:clickable="true"
+        android:contentDescription="@string/extended_fab_content_desc"
+        android:focusable="true"
+        android:gravity="center"
+        android:onClick="toggleData"
+        android:textAppearance="@style/AppTheme"
+        app:backgroundTint="#C0E6B0"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toTopOf="@+id/current_data_title"
+        app:layout_constraintEnd_toStartOf="@+id/resetData"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chart"
+        app:rippleColor="@color/white"
+        app:shapeAppearanceOverlay="@style/fab_3_rounded" />
 
-        </com.github.mikephil.charting.charts.LineChart>
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/resetData"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="fill_horizontal|center_vertical|end"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_weight="1"
+        android:baselineAligned="false"
+        android:clickable="true"
+        android:contentDescription="@string/extended_fab_content_desc"
+        android:focusable="true"
+        android:gravity="center"
+        android:onClick="resetData"
+        android:textAppearance="@style/AppTheme"
+        app:backgroundTint="#C0E6B0"
+        app:fabSize="mini"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/toggleData"
+        app:layout_constraintTop_toBottomOf="@+id/chart"
+        app:rippleColor="@color/white"
+        app:shapeAppearanceOverlay="@style/fab_3_rounded" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="43dp"
-            android:layout_weight="2"
-            android:gravity="clip_vertical|fill_vertical"
-            android:orientation="horizontal">
+    <TextView
+        android:id="@+id/current_data_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="start"
+        android:text="@string/current_data_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resetData" />
 
-            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-                android:id="@+id/toggleData"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="fill_horizontal|center_vertical"
-                android:layout_margin="16dp"
-                android:layout_weight="1"
-                android:clickable="true"
-                android:contentDescription="@string/extended_fab_content_desc"
-                android:focusable="true"
-                android:gravity="center"
-                android:onClick="toggleData"
-                android:textAppearance="@style/AppTheme"
-                app:backgroundTint="#C0E6B0"
-                app:fabSize="mini"
-                app:rippleColor="@color/white"
-                app:shapeAppearanceOverlay="@style/fab_3_rounded" />
+    <TextView
+        android:id="@+id/current_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|start"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:ems="16"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/current_data_title" />
 
-            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-                android:id="@+id/resetData"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="fill_horizontal|center_vertical|end"
-                android:layout_margin="16dp"
-                android:layout_weight="1"
-                android:baselineAligned="false"
-                android:clickable="true"
-                android:contentDescription="@string/extended_fab_content_desc"
-                android:focusable="true"
-                android:gravity="center"
-                android:onClick="resetData"
-                android:textAppearance="@style/AppTheme"
-                app:backgroundTint="#C0E6B0"
-                app:fabSize="mini"
-                app:rippleColor="@color/white"
-                app:shapeAppearanceOverlay="@style/fab_3_rounded" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="3"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/current_data_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/current_data_title" />
-
-            <TextView
-                android:id="@+id/current_data"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|start"
-                android:ems="16" />
-        </LinearLayout>
-
-        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="16dp"
-            android:layout_weight=".3"
-            android:clickable="true"
-            android:contentDescription="@string/extended_fab_content_desc"
-            android:focusable="true"
-            android:gravity="center"
-            android:onClick="export"
-            android:text="@string/export_csv_data"
-            android:textAppearance="@style/AppTheme"
-            app:backgroundTint="#C0E6B0"
-            app:fabSize="mini"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:rippleColor="@color/white"
-            app:shapeAppearanceOverlay="@style/fab_3_rounded" />
-
-
-    </LinearLayout>
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:layout_weight=".3"
+        android:clickable="true"
+        android:contentDescription="@string/extended_fab_content_desc"
+        android:focusable="true"
+        android:gravity="center"
+        android:onClick="export"
+        android:text="@string/export_csv_data"
+        android:textAppearance="@style/AppTheme"
+        app:backgroundTint="#C0E6B0"
+        app:fabSize="mini"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="@color/white"
+        app:shapeAppearanceOverlay="@style/fab_3_rounded" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
