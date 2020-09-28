@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "Assignment1"
+rootProject.name = "EECS_410"
