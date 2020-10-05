@@ -6,7 +6,7 @@ Madison M. Hillyard
 madison.hillyard@case.edu
 
 # Description
-This application plots real time sampled data from the device's accelerometer and allows the user to export the data.
+This application tracks location adn activity while giving an interface to control Spotify Music
 
 # Development Info
 
