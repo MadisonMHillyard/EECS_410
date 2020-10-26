@@ -1,3 +1,2 @@
-include ':spotify-app-remote-release-0.7.1'
 include ':app'
-rootProject.name = "EECS_410"
+rootProject.name = "assignment3"

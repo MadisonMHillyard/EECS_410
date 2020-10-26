@@ -6,15 +6,15 @@ Madison M. Hillyard
 madison.hillyard@case.edu
 
 # Description
-This application tracks location adn activity while giving an interface to control Spotify Music
+This application tracks Medication consistency for people with Hashimoto's Disease and hypothyroidism
 
 # Development Info
 
-This Code only tested on a Samsung Galaxy S8 Phone and may not be cross compatible to different screen types. 
+This Code is only tested on a Samsung Galaxy S8 Phone and may not be cross compatible to different screen types. 
 
-Please note the device that runs this application must be capable of accessing an internal Accelerometer sensor.
+Please note the device that runs this application must be capable of Location Based, Android Calendar and Notification Services.
 
-For best use export to Google Drive
+For best use please use Google Calendar
 
 # Hierarchy
 
@@ -30,14 +30,13 @@ For best use export to Google Drive
 │       │   ├───java
 │       │   │   └───com
 │       │   │       └───example
-│       │   │           └───assignment1
+│       │   │           └───assignment3
 │       │   └───res
 │       └───test
 
 ├───gradle
 │   └───wrapper
 ├───old
-└───spotify-app-remote-release-0.7.1
 
 ```
 
@@ -45,26 +44,63 @@ For best use export to Google Drive
 
 ### MainActivity.java
 
-Controls the UI and instantiates the other functionality.
+- Controls the UI and instantiates the other functionality.
 
-### MusicManager.java
+### GeofenceBroadcastReceiver.java
 
-Manages the Music Connection to Spotify
+- BroadcastReceiver for the GeoFence transition Updates
 
-### SensorFilter.java
+### ui
 
-Filters the Accelorometer Sensor Data
+#### GeofenceViewModel.java
 
-### StepDetector.java
+- ViewModel for the GeofenceFragment
 
-Main Step Detection Class. Contains a Step Listener and updates computed acceleration
+#### GeofenceFragment.java
 
-### Steplistener.java
+- Fragment that handles all GeoFence Page actions
 
-Listener Interface
+#### HomeViewModel.java
 
+- ViewModel for the HomeFragment
+
+#### HomeFragment.java
+
+- Fragment that handles all Home Page actions
+
+#### ReminderViewModel.java
+
+- ViewModel for the ReminderFragment
+
+#### ReminderFragment.java
+
+- Fragment that handles all Reminder Page actions
+
+#### GeoFenceListener.java
+
+- Interface to enable Location updates in Fragment
+
+### GeofenceBroadcastReceiver.java
+
+- BroadcastReceiver for the GeoFence transition Updates
+
+### Room database
+
+### Tracker.java
+- Tracker Entity
+
+### TrackerDoa.java
+- Tracker Data Access Object 
+  
+### TrackerRepository.java
+- Tracker Repository
+
+### TrackerRoomDatabase.java
+- Tracker Database
+
+### TrackerViewModel.java
+- Tracker View Model
+  
 # Compilation and Dependencies
 
 All dependencies are noted in the app level gradle file.
-
-Please note this application uses and depends on Spotify's Android SDK and Google Map's SDK
